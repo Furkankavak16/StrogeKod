@@ -1,0 +1,33 @@
+ //Kodlarla form dersinden satranç tahtasını yaptık
+
+
+Button[,] buttons = new Button[7, 7];
+            int top = 0;
+            int left = 0;
+            for (int i = 0; i <= buttons.GetUpperBound(0); i++)
+            {
+                for (int j = 0; j <= buttons.GetUpperBound(1); j++)
+                {
+                    buttons[i, j] = new Button();
+                    buttons[i, j].Width = 80;
+                    buttons[i, j].Height = 80;
+                    buttons[i, j].Left = left;
+                    buttons[i, j].Top = top;
+                    left += 80;
+                  
+                    if((i+j)%2==0)
+                    {
+                        buttons[i, j].BackColor = Color.Black;
+                    }
+                    else
+                    {
+                        buttons[i, j].BackColor = Color.White;
+                    }
+
+
+
+                    this.Controls.Add(buttons[i, j]);
+                }
+                top += 80;
+                left = 0;
+            }
