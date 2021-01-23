@@ -1,63 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BağlıListe
+namespace ClassMetotDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //liste tanımlama
-            Liste bağlıliste = new Liste();
-            bağlıliste.listeBasınaElemanEkle(new Eleman(45));
-            bağlıliste.listeyeEkle(new Eleman(55));
-            bağlıliste.listeyeEkle(new Eleman(23));
-            bağlıliste.listeyeEkle(new Eleman(9));
-            bağlıliste.listeyeEkle(new Eleman(78));
-            bağlıliste.listeyeEkle(new Eleman(61));
-          
+            Musteri musteri1 = new Musteri();
+            musteri1.Ad = "Furkan";
+            musteri1.Soyadı = "Kavak";
+            musteri1.MusteriNumarasi = 321;
+            musteri1.MusteriPuan = 6.5;
 
-            Console.WriteLine("Eleman sayısı:" + $"{bağlıliste.ElemanSayısı()}");
-
-            //liste eleman arama 
-            Eleman arananEleman = bağlıliste.listeAra(9);
-            if (arananEleman != null)
-                Console.WriteLine("Bulundu:{0}", arananEleman.icerik);
-            else
-                Console.WriteLine("Bulunamadı");
-
-            Eleman sıfır = bağlıliste.elemanGetir(0);
-            Eleman bir = bağlıliste.elemanGetir(1);
-            Eleman iki = bağlıliste.elemanGetir(2);
-            Eleman uc = bağlıliste.elemanGetir(3);
+            Musteri musteri2 = new Musteri();
+            musteri2.Ad = "Ahmet";
+            musteri2.Soyadı = "Şengül";
+            musteri2.MusteriNumarasi = 897;
+            musteri2.MusteriPuan = 4.8;
 
 
+            Musteri musteri3 = new Musteri();
+            musteri3.Ad = "Osman ";
+            musteri3.Soyadı = "Öztoprak";
+            musteri3.MusteriNumarasi = 254;
+            musteri3.MusteriPuan = 10;
 
-            Console.WriteLine(sıfır.icerik);
-            Console.WriteLine(bir.icerik);
-            Console.WriteLine(iki.icerik);
-            Console.WriteLine(uc.icerik);
-            
-            //liste basındaki elemanı sil
-            bağlıliste.listeBasındanElemanSil();
-            //liste sonundan eleman sil
-            bağlıliste.listeSonundanElemandSil();
+            Musteri[] musteriler = new Musteri[] { musteri1, musteri2,musteri3 };
 
-            //listeden eleman silmek 
-            bağlıliste.listedeSil(iki);
-            bağlıliste.listedeSil(uc);
-            
-            
-            Console.WriteLine($"Eleman sayısı:" + $"{bağlıliste.ElemanSayısı()}");
+            MusteriManager musteriManager = new MusteriManager();
 
-
+            musteriManager.musteriEkle(musteri1);
+            //musteriManager.musteriSil(musteri1);
+            musteriManager.musteriEkle(musteri2);
+           // musteriManager.musteriSil(musteri2);
+            musteriManager.musteriEkle(musteri3);
+           // musteriManager.musteriSil(musteri3);
             Console.ReadKey();
-
-
 
         }
     }
