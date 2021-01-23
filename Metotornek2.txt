@@ -1,0 +1,9 @@
+  int sonuc = topla(54, 69);
+            Console.WriteLine("Toplama Sonucu:{0}", sonuc);
+            Console.ReadKey();
+
+        }
+        private static int topla(int s1,int s2)
+        {
+            return (s1 + s2);
+        }

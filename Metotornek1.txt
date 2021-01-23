@@ -1,0 +1,17 @@
+//~~~~methods(metotlar)~
+
+
+  static void Main(string[] args)
+        {
+            string yazılacakmetin = "Furkan Çok yavaşsın";
+            metinyaz(yazılacakmetin);
+            Console.ReadKey();
+
+           
+        }
+        public static void metinyaz(string metin)
+        {
+            for (int i = 0; i <=10; i++)
+            {
+                Console.WriteLine(metin);
+            }

@@ -1,0 +1,91 @@
+ //metotlarla dortişlem sınıf oluşturma örneği
+
+static void Main(string[] args)
+        {
+            BASADON:
+            Console.WriteLine("1.Sayıyı Giriniz?");
+            double sayı1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("2.Sayıyı Giriniz?");
+            double sayı2 = Convert.ToDouble(Console.ReadLine());
+        DORTISLEMSECIM:
+            Console.WriteLine("Seçiminizi yapınız?(1:toplama 2:Çıkarma 3:Bölme 4:Çarpma)");
+            char dortislemsec = Convert.ToChar(Console.ReadLine());
+            switch (dortislemsec)
+            {
+                case '1':
+                    dortislem toplamaislemi = new dortislem();
+                    double toplam = toplamaislemi.topla(sayı1, sayı2);
+                    Console.WriteLine("Toplama Sonucu:{0}", toplam);
+                    break;
+                case '2':
+                    dortislem cıkarmaislemi = new dortislem();
+                    double fark = cıkarmaislemi.cıkar(sayı1, sayı2);
+                    Console.WriteLine("Çıkarma İşlemi:{0}", fark);
+                    break;
+                case '3':
+                    dortislem bolmeislemi = new dortislem();
+                    double bolum = bolmeislemi.bol(sayı1, sayı2);
+                    Console.WriteLine("Bölme İşlemi:{0}", bolum);
+                    break;
+                case '4':
+                    dortislem carpmaislemi = new dortislem();
+                    double carpım = carpmaislemi.carp(sayı1, sayı2);
+                    Console.WriteLine("Çarpma İşlemi:{0}", carpım);
+                    break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("Yanlış seçim yaptınız. Tekrar deneyiniz");
+                    goto DORTISLEMSECIM;
+
+
+
+
+
+            }
+        DEVAMSECIM:
+
+            Console.WriteLine("Yeniden işlem yapmak istermisiniz?(EVET:E HAYIR:H)");
+            Char devamsec = Convert.ToChar(Console.ReadLine());
+            if (devamsec=='E' || devamsec=='e')
+            {
+                Console.Clear();
+                goto BASADON;
+            }
+            else if (devamsec=='H' || devamsec=='h')
+            {
+                Console.WriteLine("İyi Günler");
+            }
+            else
+            {
+                Console.WriteLine("Yanlış secim yaptınız.Tekrar deneyiniz");
+                goto DEVAMSECIM;
+            }
+            Console.ReadKey();
+
+
+
+
+        }
+
+        class dortislem
+        {
+            public double topla(double x,double y)
+            {
+                return (x + y);
+            }
+            public double cıkar(double x,double y)
+            {
+                return (x - y);
+
+            }
+            public double bol(double x, double y)
+            {
+                return (x / y);
+            }
+            public double carp(double x,double y)
+            {
+                return (x * y);
+            }
+        }
+          
+    }

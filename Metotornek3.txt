@@ -1,0 +1,41 @@
+//DİKDÖRTGEN ALAN HESPALAMA
+
+
+        static void Main(string[] args)
+        {
+          
+            Console.WriteLine("Uzun kenar uzunluğunu giriniz?");
+            double uzunkenar = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Kısa kenar uzunluğunu giriniz?");
+            double kısakenar = Convert.ToDouble(Console.ReadLine());
+            double dikdortgenalan = alancevrehesapla.alanhesapla(uzunkenar, kısakenar);
+            double diktorgencevre = alancevrehesapla.cevrehesapla(uzunkenar, kısakenar);
+            Console.WriteLine("Dikdörtgenin Alanı:{0}", dikdortgenalan);
+            Console.WriteLine("Dikdörtgenin Çevresi:{0}", diktorgencevre);
+            Console.ReadKey();
+
+
+        }
+        class alancevrehesapla
+        {
+
+            public static double alanhesapla(double kısakenar,double uzunkenar)
+            {
+                double alan = kısakenar * uzunkenar;
+                return (alan);
+                
+
+            }
+            
+            public static double cevrehesapla(double kısakenar, double uzunkenar)
+            {
+                double cevre =2* (kısakenar + uzunkenar);
+                return (cevre);
+
+
+            }
+              
+
+
+        }
+          
