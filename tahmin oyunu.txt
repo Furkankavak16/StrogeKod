@@ -1,0 +1,42 @@
+   Random rnd = new Random();
+            int rastgelesayı = rnd.Next(100);
+            Console.WriteLine("Üretilen Sayınız:{0}", rastgelesayı);
+            int hak=5;
+            BASADON:
+            Console.WriteLine("Bir Sayı Tahmininde Bulununuz?");
+            int tahmin = Convert.ToInt32(Console.ReadLine());
+
+            if (tahmin==rastgelesayı)
+            {
+                Console.WriteLine("Tebrikler...Kazandınız Puanın:{0}", hak * 20);
+
+            }
+            else if (tahmin<rastgelesayı)
+            {
+                hak--;
+                if (hak==0)
+                {
+                    Console.WriteLine("Tahmin Hakkınız Kalmadı Kaybettiniz...Oyun Bitti");
+                }
+                else
+                {
+                    Console.WriteLine("Tahminizi Büyütünüz");
+                    goto BASADON;
+                }
+            }
+            else if (tahmin>rastgelesayı)
+            {
+                hak--;
+                if (hak==0)
+                {
+                    Console.WriteLine("Tahmin Hakkınız Kalmadı Kaybettiniz...Oyun Bitti");
+                }
+                else
+                { 
+                    Console.WriteLine("Tahmininizi Küçültünüz");
+                    goto BASADON;
+                }
+            }
+            Console.ReadKey();
+
+
